@@ -43,16 +43,21 @@ difference(){
     translate([-10,-10,-10])cube([200,200,10]);
     
     color("purple")
-        translate([138,6.5,1.5])
+        translate([138,5.5,1.5])
         rotate([0,0,60])
         minkowski(){
-            cube([36,10,20]);
+            cube([37,50,20]);
             cylinder(r=2,h=1);
         };
     //color("purple")translate([137.5,7,1.5])cylinder(h=height+1, r1=2.5, r2=3);
 }
 }
 
-    //mirror()finish();
-    finish();
+module plate(){
+    resize([logox,logoy,2.5])
+    import("ergodash-plate.png_2.5mm.stl", convextivity=5);
+}
+    mirror()finish();
+    //finish();
+    //plate();
 //interior();
